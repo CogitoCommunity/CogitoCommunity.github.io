@@ -12,13 +12,14 @@ theme = 'PaperMod'
   defaultTheme = "light"
   
   # Homepage Settings
-  homeInfoParams.Title = "Cogito"
-  homeInfoParams.Content = """
-  **Active Creation > Passive Consumption**
+  [params.profileMode]
+    enabled = false
+  [params.homeInfoParams]
+    Title = "CogitoCommunity"
+    Content = "Bilingual student publication fostering intellectual discourse through Biology, Philosophy, and Public Speaking"
   
-  A student-led publication covering Biology, Philosophy, Public Speaking, and beyond.
-  """
-  
+
+
   # Show article reading time
   ShowReadingTime = true
   

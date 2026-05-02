@@ -6,15 +6,8 @@
     <description>Recent content on CogitoCommunity</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Your Article Title Here</title>
-      <link>http://localhost:1313/article-template/</link>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/article-template/</guid>
-      <description>A short 1-2 sentence summary for SEO and social media sharing</description>
-    </item>
     <item>
       <title>Welcome to CogitoCommunity</title>
       <link>http://localhost:1313/articles/test-article/</link>
@@ -28,6 +21,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
       <description>Our mission, values, and the team behind the student publication</description>
+    </item>
+    <item>
+      <title>COGITOCOMMUNITY ARTICLE TEMPLATE</title>
+      <link>http://localhost:1313/article-template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/article-template/</guid>
+      <description>This template ensures your article is clear, rigorous, and publish-ready. Follow the structure below, but remember: clarity and critical thinking matter more than rigid formatting.</description>
     </item>
     <item>
       <title>Submit Your Work</title>
