@@ -3,8 +3,6 @@ public/
 resources/
 .hugo_build.lock
 
-# Personal Tools (Obsidian)
-.obsidian/
 
 # OS Junk
 .DS_Store

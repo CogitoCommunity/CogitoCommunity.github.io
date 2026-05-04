@@ -51,7 +51,7 @@ Submit your form [here.](https://forms.gle/dvsE8Cz8QTsfprP17)
 Check our [Idea Bank](/idea-bank/) for 15 starter topics.
 
 **First time writing?**  
-See our [Quick Reference Guide](#) for writing tips.
+See our [Quick Reference Guide](/quick-reference-guide/) for writing tips.
 
 **Questions?**  
 Email us at: communitycogito@gmail.com *(might change email soon)*
