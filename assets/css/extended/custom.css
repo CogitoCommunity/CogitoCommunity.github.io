@@ -5,10 +5,22 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
 /* CogitoCommunity Brand Colors */
 :root {
-    --forest-green: #228B22;
-    --gold: #D4AF37;
-    --dark-green: #1a6b1a;
-    --light-gold: #f4d976;
+  /* Primary */
+  --primary-green: #1B5E20;      /* Main actions, headers */
+  --primary-green-dark: #144716;  /* Hover states */
+  --primary-green-light: #2E7D32; /* Accents */
+  
+  /* Accent */
+  --gold: #C9972B;               /* CTAs, highlights */
+  --gold-dark: #B8862A;          /* Hover */
+  --gold-light: #D4A842;         /* Subtle accents */
+  
+  /* Neutrals */
+  --background: #FAFAF8;         /* Page background */
+  --surface: #FFFFFF;            /* Cards, elevated elements */
+  --text-primary: #1A1A1A;       /* Body text */
+  --text-secondary: #4A4A4A;     /* Meta info */
+  --border: #E0E0E0;             /* Dividers */
 }
 
 /* Header/Navigation - Forest Green */
