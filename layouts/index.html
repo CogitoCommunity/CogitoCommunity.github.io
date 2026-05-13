@@ -1,21 +1,58 @@
 {{ define "main" }}
 
+<!-- Hero Section with Floating Decorative Icons -->
 <div class="homepage-hero-compact">
+  <!-- Floating Icons (decorative, behind text) -->
+  <img src="/images/icons/dna-strand.png" alt="" class="hero-icon top-left" aria-hidden="true">
+  <img src="/images/icons/philosopher-bust.png" alt="" class="hero-icon top-right" aria-hidden="true">
+  <img src="/images/icons/podium.png" alt="" class="hero-icon bottom-left" aria-hidden="true">
+  <img src="/images/icons/open-book.png" alt="" class="hero-icon bottom-right" aria-hidden="true">
+  
+  <!-- Hero Content (above floating icons) -->
   <div class="hero-content">
     <h1 class="text-center">{{ .Site.Title }}</h1>
-    {{ with .Site.Params.subtitle }}
-    <p class="hero-subtitle text-center">{{ . }}</p>
-    {{ end }}
-    <div class="hero-buttons flex-center">
-      <a href="/articles/" class="button">Explore Articles</a>
-      <a href="/about/" class="button">About Us</a>
-      <a href="/submit/" class="button">Submit Your Work</a>
+    <p class="hero-subtitle text-center">Pursuit of Truth</p>
+    <p class="hero-subtitle text-center">Where Biology meets Philosophy meets Public Speaking</p>
+    
+    <!-- Stats Bar -->
+    <div class="hero-stats">
+      <div><strong>3</strong> Active Clubs</div>
+      <div><strong>{{ len (where .Site.RegularPages "Section" "in" (slice "articles")) }}</strong> Articles</div>
+      <div><strong>Bilingual</strong> EN/AR</div>
     </div>
   </div>
 </div>
 
-{{/* Sorting explicitly by Date to ensure the newest is first */}}
-{{ $pages := (where .Site.RegularPages "Section" "in" (slice "articles" "biology" "philosophy")).ByDate.Reverse }}
+<!-- Club Feature Cards (3-column grid) -->
+<section class="clubs-feature-grid">
+  <!-- Biology Club -->
+  <article class="club-feature-card">
+    <div class="club-icon">🧬</div>
+    <h3>Biology Club</h3>
+    <p>Explore neuroscience, anatomy, pharmacology, and epidemiology. Dive into how life works at every level.</p>
+    <a href="/clubs/biology-club/" class="button">Explore Biology →</a>
+  </article>
+  
+  <!-- Philosophy Club -->
+  <article class="club-feature-card">
+    <div class="club-icon">🏛️</div>
+    <h3>Philosophy Club</h3>
+    <p>Engage with logic, ethics, and critical thinking. Question assumptions and build rigorous arguments.</p>
+    <a href="/clubs/philosophy-club/" class="button">Explore Philosophy →</a>
+  </article>
+  
+  <!-- Public Speaking Club -->
+  <article class="club-feature-card">
+    <div class="club-icon">🎤</div>
+    <h3>Public Speaking</h3>
+    <p>Master rhetoric, debate, and persuasion. Learn to communicate ideas with clarity and confidence.</p>
+    <a href="/clubs/public-speaking-club/" class="button">Explore Speaking →</a>
+  </article>
+</section>
+
+<!-- Featured Article Section -->
+{{/* Sort articles by date (newest first) */}}
+{{ $pages := (where .Site.RegularPages "Section" "in" (slice "articles")).ByDate.Reverse }}
 
 <section class="featured-section-container">
   {{ range first 1 $pages }}
@@ -35,24 +72,30 @@
   {{ end }}
 </section>
 
+<!-- Recent Articles Grid (6 articles, 3 columns) -->
 <section class="article-grid-container">
+  <h2 class="text-center">Recent Articles</h2>
   <div class="article-grid">
     {{ range first 6 (after 1 $pages) }}
         <article class="article-card">
-          {{/* 1. Title First */}}
+          <!-- Title First -->
           <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
           
-          {{/* 2. Club Minimized Underneath */}}
+          <!-- Club Badge -->
           {{ with .Params.clubs }}
             <div class="article-meta-minimized">
-              {{ if reflect.IsSlice . }}{{ range . }}<span class="club-badge-small">{{ . }}</span>{{ end }}
-              {{ else }}<span class="club-badge-small">{{ . }}</span>{{ end }}
+              {{ if reflect.IsSlice . }}
+                {{ range . }}<span class="club-badge-small">{{ . }}</span>{{ end }}
+              {{ else }}
+                <span class="club-badge-small">{{ . }}</span>
+              {{ end }}
             </div>
           {{ end }}
 
-          {{/* 3. Description Underneath */}}
+          <!-- Summary -->
           <p class="article-excerpt">{{ .Summary | truncate 90 }}</p>
           
+          <!-- Footer (Read time + link) -->
           <div class="article-footer">
             <span>{{ .ReadingTime }} min read</span>
             <a href="{{ .Permalink }}">Read →</a>
@@ -61,10 +104,10 @@
     {{ end }}
   </div>
 </section>
-<br>
-<br>
 
-  <div class="newslettter">
-    {{ (printf "{{< newsletter >}}" ) | .Page.RenderString }}
-  </div>
+<!-- Newsletter Signup -->
+<div class="newslettter">
+  {{ (printf "{{< newsletter >}}" ) | .Page.RenderString }}
+</div>
+
 {{ end }}
