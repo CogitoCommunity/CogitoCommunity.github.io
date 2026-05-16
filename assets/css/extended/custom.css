@@ -13,9 +13,9 @@
 
 :root {
   /* ===== PaperMod Core Variables (Required for Theme Switching) ===== */
-  --theme: #FAFBF7;              /* Page background */
-  --entry: #FAFBFA;              /* Card backgrounds */
-  --primary: #1B5E20;            /* Forest green - main accent */
+  --theme: #F5F6F2;              /* Page background */
+  --entry: #FFFFFF;              /* Card backgrounds */
+  --primary: #2E7D32;            /* Forest green - main accent */
   --content: #1A1A1A;            /* Body text */
   --secondary: #4A4A4A;          /* Secondary text */
   --tertiary: #6B6B6B;           /* Muted text */
@@ -55,6 +55,19 @@
   --transition-slow: 0.3s ease;
 }
 
+/* dark mode*/
+body.dark {
+  --theme: #1A1D1A;
+  --entry: #242824;
+  --primary: #4CAF50;
+  --content: #E8E8E8;
+  --secondary: #B0B0B0;
+  --tertiary: #888;
+  --border: #3A3D3A;
+  --accent: #FFD54F;
+  --primary-dark: #66BB6A;
+  --code-bg: #2A2D2A;
+}
 /* ============================================================
    # BASE TYPOGRAPHY
    ============================================================ */
