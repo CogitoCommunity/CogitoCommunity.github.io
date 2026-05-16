@@ -81,3 +81,7 @@ googleAnalytics = "G-299ZRXC3F2"
 [markup]
   [markup.highlight]
     style = 'monokai'
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
