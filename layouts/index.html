@@ -107,8 +107,12 @@
   </div>
 </section>
 
+<style>
+  .newsletter blockquote { border-left: none !important; }
+</style>
+
 <!-- Newsletter Signup -->
-<div class="newslettter">
+<div class="newsletter">
   {{ (printf "{{< newsletter >}}" ) | .Page.RenderString }}
 </div>
 
